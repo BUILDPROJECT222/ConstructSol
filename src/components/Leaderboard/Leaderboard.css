@@ -1,0 +1,116 @@
+.leaderboard-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../../assets/bg1.PNG');
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.leaderboard-container {
+  width: 1200px;
+  margin: 20px auto;
+  padding: 80px;
+  background: #00897b;
+  box-shadow: 0 2px 10px #FFD700;
+  animation: glow 1s infinite;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.leaderboard-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard-table {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: 100px 250px 250px 350px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 100px 350px 125px 250px;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-row.current-user {
+  background: rgba(0, 188, 212, 0.2);
+}
+
+.rank-column {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rank-medal {
+  font-size: 1.2rem;
+}
+
+.wallet-column, .score-column, .rewards-column {
+  display: flex;
+  align-items: center;
+}
+
+.rewards-column {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.testfun-icon-leaderboard {
+  width: 20px;
+  height: 20px;
+}
+
+.leaderboard-loading, .leaderboard-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #ffffff;
+}
+
+.loading-spinner {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.wallet-column.clickable {
+  cursor: pointer;
+  color: #4fc3f7;
+  transition: color 0.2s ease;
+}
+
+.wallet-column.clickable:hover {
+  color: #81d4fa;
+  text-decoration: underline;
+} 
