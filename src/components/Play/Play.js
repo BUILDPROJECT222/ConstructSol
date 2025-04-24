@@ -1346,11 +1346,11 @@ const Play = () => {
       console.log('Token balance check:', {
         userTokenBalance: tokenBalance,
         plantedPlotsCount: plots.filter(plot => plot.planted).length,
-        requiredTokensPerPlot: 50000
+        requiredTokensPerPlot: 200
       });
 
       // Validasi token minimum per plot (50000 token)
-      const requiredTokensPerPlot = 50000;
+      const requiredTokensPerPlot = 200;
       const userTokenBalance = tokenBalance || 0;
       
       // Hitung jumlah plot yang sudah dibangun
