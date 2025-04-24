@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MusicPlayer.css';
-import gardenTheme from '../../assets/music/garden_theme.mp3';
+import gardenTheme from '../../assets/music/construction_theme.mp3';
 
 const MusicPlayer = () => {
   // Get music preference, default to true (music on) if not set
