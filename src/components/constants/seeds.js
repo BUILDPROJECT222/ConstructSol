@@ -14,7 +14,8 @@ export const seeds = [
     description: 'An elegant residential property with premium amenities yielding top-tier rental income',
     price: 200,
     reward: 205,
-    growthTime: 5400, // Construction time in seconds
+    // growthTime: 5400, // Construction time in seconds
+    growthTime: 5,
   },
   {
     id: 'apartment',
@@ -24,7 +25,8 @@ export const seeds = [
     description: 'A prestigious high-rise with panoramic views and luxury units commanding premium rents',
     price: 200,
     reward: 230,
-    growthTime: 10800, // 2 hours
+    // growthTime: 10800, // 2 hours
+    growthTime: 10,
   },
   {
     id: 'store',
@@ -34,7 +36,8 @@ export const seeds = [
     description: 'An upscale shopping destination featuring exclusive merchandise and a devoted clientele',
     price: 200,
     reward: 280,
-    growthTime: 21600, // 1.5 hours
+    // growthTime: 21600, // 1.5 hours
+    growthTime: 10,
   },
   {
     id: 'store1',
@@ -44,7 +47,8 @@ export const seeds = [
     description: 'A strategically located mini-market with constant customer flow and high-margin impulse buys',
     price: 200,
     reward: 380,
-    growthTime: 43200, // 1.5 hours
+    // growthTime: 43200, // 1.5 hours
+    growthTime: 30,
   },
   {
     id: 'store2',
@@ -54,7 +58,8 @@ export const seeds = [
     description: 'A sprawling commercial paradise with entertainment venues, food courts and flagship stores',
     price: 200,
     reward: 600,
-    growthTime: 86400, // 1.5 hours
+    // growthTime: 86400, // 1.5 hours
+    growthTime: 1200,
   },
   // {
   //   id: 'factory',
