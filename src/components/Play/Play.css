@@ -1040,7 +1040,7 @@
 .seed-options {
   position: absolute;
   top: calc(100% + 10px);
-  left: 0;
+  left: -90px;
   width: 350px;
   max-height: 400px;
   overflow-y: auto;

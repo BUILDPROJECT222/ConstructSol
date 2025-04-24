@@ -11,6 +11,7 @@ import { GameProvider } from './context/GameContext';
 import TwitterVerification from './components/TwitterVerification/TwitterVerification';
 import ProtectedDemo from './components/ProtectedDemo/ProtectedDemo';
 import Leaderboard from './components/Leaderboard/Leaderboard';
+import About from './components/About/About';
 
 function ErrorFallback({error}) {
   if (error.message?.includes('object.extension.inIncognitoContext')) {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/twitter-verify" element={<TwitterVerification />} />
               <Route path="/play" element={<Play />} /> 
               <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <MusicPlayer />
