@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 /* Pastikan CSS untuk notifikasi ada di bagian atas file */
 .harvest-notification {
   position: fixed;
@@ -91,7 +91,7 @@
   color: #FFD700;
   font-size: 28px;
   margin: 0 0 15px 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   text-shadow: 
     0 0 10px rgba(255, 215, 0, 0.5),
     0 0 20px rgba(255, 215, 0, 0.3);
@@ -220,7 +220,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background: #654321;
+  background: rgba(0, 137, 123, 0.9);;
   padding: 10px 0;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -283,7 +283,7 @@
 
 .tool-name {
   font-size: 12px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   color: currentColor;
 }
 
@@ -305,6 +305,8 @@
 .store-wrapper {
   background-image: url('../../assets/bg1.PNG');
   background-position: center;
+  background-size: cover;
+  
 }
 
 /* Store Items Grid */
@@ -347,7 +349,7 @@
 }
 
 .item-details h3 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 14px;
     color: #FFD700;
     margin: 5px 0;
@@ -355,7 +357,7 @@
 }
 
 .item-details p {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 10px;
     color: #FFF;
     margin: 5px 0;
@@ -365,7 +367,7 @@
 /* Growth Time and Reward */
 .growth-time, 
 .reward-text {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 9px;
     color: #FFD700;
     margin: 5px 0;
@@ -378,7 +380,7 @@
     margin-top: auto;
     background: linear-gradient(to bottom, #0288d1, #0277bd);
     border: 2px solid #FFD700;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     color: #000;
     cursor: pointer;
@@ -957,7 +959,7 @@
 
 .coming-soon h2 {
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: clamp(16px, 4vw, 24px);
   margin-bottom: clamp(8px, 2vw, 15px);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -966,7 +968,7 @@
 
 .coming-soon p {
   color: #FFFFFF;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: clamp(8px, 2vw, 12px);
   opacity: 0.8;
   line-height: 1.6;
@@ -1090,13 +1092,13 @@
 
 .seed-name {
   font-size: 12px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   
 }
 
 .seed-price {
 position: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 10px;
   color: #FFD700;
 }
@@ -1104,7 +1106,7 @@ position: center;
 .current-balance {
     width: 100%;
     color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     text-align: center;
     background: linear-gradient(145deg, #00897b, #0288d1);
@@ -1114,7 +1116,7 @@ position: center;
   .current-balance-garden {
     width: 100%;
     color: black;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 14px;
     text-align: center;
     text-shadow: 0 0 8px rgba(255, 217, 0, 0.5);
@@ -1124,7 +1126,7 @@ position: center;
   .seed-count {
     width: 100%;
     color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     text-align: center;
   }
@@ -1132,7 +1134,7 @@ position: center;
   .price-tag {
     width: 100%;
     color: #FFD700;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     text-align: center;
   }
@@ -1177,7 +1179,7 @@ position: center;
   border-radius: 8px;
   z-index: 1000;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(255, 215, 0, 0.3);
   display: none; /* Hide by default */
@@ -1215,7 +1217,7 @@ position: center;
 
 .plot-info-content {
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -1375,7 +1377,7 @@ position: center;
 .plot-progress-content {
   color: white;
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   padding: 15px;
 }
 
@@ -1461,7 +1463,7 @@ position: center;
 
 .wallet-prompt-content h2 {
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -1479,7 +1481,7 @@ position: center;
   border-radius: 8px;
   padding: 12px 24px;
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1536,7 +1538,7 @@ position: center;
   align-items: center;
   gap: 8px;
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 12px;
 }
 
@@ -1550,7 +1552,7 @@ position: center;
   border-radius: 12px;
   padding: 6px 12px;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1569,7 +1571,7 @@ position: center;
   transform: translateX(-50%);
   padding: 12px 24px;
   border-radius: 12px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 12px;
   z-index: 1001;
   animation:  ease-in 2.7s;
@@ -1644,13 +1646,13 @@ position: center;
   border-radius: 10px;
   color: #FFD700;
   margin-bottom: 20px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
 }
 
 
 .store-item {
-  background: #654321;
+  background: ;
   border: 2px solid #FFD700;
   border-radius: 10px;
   padding: 15px;
@@ -1678,7 +1680,7 @@ position: center;
   color: black;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -1697,7 +1699,7 @@ position: center;
   font-size: 12px;
   color: #FFD700;
   margin-left: 10px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
 }
 
 .refresh-balance-btn {
@@ -1755,7 +1757,7 @@ position: center;
 }
 
 .harvest-confirm-title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     color: #FFD700;
     font-size: 16px;
     margin-bottom: 15px;
@@ -1763,7 +1765,7 @@ position: center;
 }
 
 .harvest-confirm-message {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     color: #FFF;
     font-size: 12px;
     margin: 15px 0;
@@ -1779,7 +1781,7 @@ position: center;
 
 .harvest-confirm-btn {
     padding: 10px 20px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     border: 3px solid #000;
     cursor: pointer;
@@ -1846,7 +1848,7 @@ position: center;
 }
 
 .harvest-success-title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     color: #4CAF50;
     font-size: 18px;
     margin-bottom: 20px;
@@ -1854,7 +1856,7 @@ position: center;
 }
 
 .harvest-success-message {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     color: #FFF;
     font-size: 14px;
     margin: 15px 0;
@@ -1862,7 +1864,7 @@ position: center;
 }
 
 .reward-amount {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     color: #FFD700;
     font-size: 20px;
     margin: 20px 0;
@@ -1872,7 +1874,7 @@ position: center;
 
 .harvest-success-btn {
     padding: 12px 24px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 14px;
     background: #4CAF50;
     color: #FFF;
@@ -1942,7 +1944,7 @@ position: center;
 }
 
 .wallet-prompt-devnet {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
 }
 
 /* Hover Effect */
@@ -2022,7 +2024,7 @@ position: center;
 .harvest-confirm-modal h2 {
   color: #ffd700;
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 1.5em;
   margin-bottom: 20px;
   text-shadow: 2px 2px 0px #000;
@@ -2097,7 +2099,7 @@ position: center;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
 }
 
 .reward-info img {
@@ -2120,7 +2122,7 @@ position: center;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 0.9em;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -2220,7 +2222,7 @@ position: center;
   background: rgba(0, 137, 123, 0.9);
     box-shadow: 0 2px 10px #FFD700;
     animation: glow 1s infinite;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
 
   
 }
@@ -2331,7 +2333,7 @@ position: relative;
   position: absolute;
   left: -80px;
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -2373,7 +2375,7 @@ position: relative;
   border: 2px solid #FFD700;
   border-radius: 6px;
   font-size: 12px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   white-space: nowrap;
   z-index: 1000;
   pointer-events: none;
@@ -2424,7 +2426,7 @@ position: relative;
   color: #FFD700;
   border: 2px solid #FFD700;
   border-radius: 8px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 12px;
   text-align: center;
   white-space: normal;
@@ -2486,7 +2488,7 @@ position: relative;
     0 0 30px rgba(255, 215, 0, 0.2),
     inset 0 0 50px rgba(0, 0, 0, 0.3);
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   position: relative;
   animation: pulse 1.2s ease-out infinite;
   backdrop-filter: blur(5px);
@@ -2519,7 +2521,7 @@ position: relative;
   border: 2px solid #FFD700;
   border-radius: 12px;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 12px;
   transition: all 0.3s ease;
   box-shadow: 
@@ -2542,7 +2544,7 @@ position: relative;
   border: 2px solid #FFD700;
   border-radius: 12px;
   color: #654321;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2731,7 +2733,7 @@ position: relative;
 
 .visited-garden-header h2 {
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 24px;
   margin: 0;
   flex-grow: 1;
@@ -2744,7 +2746,7 @@ position: relative;
   border: 2px solid #FFD700;
   border-radius: 4px;
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2756,7 +2758,7 @@ position: relative;
 
 .garden-owner {
   color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
   margin: 0;
 }
@@ -3087,7 +3089,7 @@ position: relative;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 0.9em;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -3256,45 +3258,48 @@ position: relative;
 }
 
 .plot-progress-popup {
-  position: absolute;
-  top: 50%; /* Center vertically relative to the plot */
-  left: 110%; /* Position to the right of the plot with some spacing */
+  position: fixed; 
+  top: 100%; 
+  right: -240px; 
   width: 280px;
-  background: linear-gradient(135deg, #0e7490 0%, #06b6d4 50%, #0e7490 100%);
+  background: rgba(0, 0, 0, 0.8);
   border: 2px solid #FFD700;
   border-radius: 10px;
   padding: 15px;
-  z-index: 100;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transform: translateY(-50%); /* Center the popup vertically */
-  pointer-events: none;
-  opacity: 0;
+  color: white;
+  font-family: 'Bungee', cursive !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  z-index: 9;
+  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
+  display: none;
+  transform: translateY(10px) rotate(5deg) perspective(800px) rotateX(-80deg); 
+  transform-origin: center;
+  pointer-events: none;
+  
 }
 
-/* Show the popup when hovering over the plot */
 .plot:hover .plot-progress-popup {
-  opacity: 1;
-  pointer-events: auto;
+  /* transform: translateY(10px) rotate(5deg) perspective(800px) rotateX(-80deg);  */
+  /* z-index: 9999; */
+  display: block;
 }
 
-/* Make sure the popup is contained within viewport on smaller screens */
 @media (max-width: 1400px) {
   .plot-progress-popup {
-    left: auto;
-    right: -300px; /* Position to the right but with fixed distance */
-    top: 0;
-    transform: none;
+    width: 250px;
+    padding: 12px;
+    font-size: 0.9em;
   }
 }
 
 @media (max-width: 768px) {
   .plot-progress-popup {
-    left: 50%;
-    right: auto;
-    top: 120%; /* Position below the plot on mobile */
-    transform: translateX(-50%);
-    width: 250px;
+    top: 100px;
+    left: 10px;
+    width: 220px;
+    padding: 10px;
+    font-size: 0.8em;
   }
 }
 
@@ -3354,7 +3359,7 @@ position: relative;
 }
 
 .plant-name {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive !important;
   font-size: 14px;
   color: #FFD700;
   text-shadow: 1px 1px 0 #000;
@@ -3974,4 +3979,3 @@ position: relative;
     font-size: 9px;
   }
 }
-

@@ -1,3 +1,6 @@
+/* Add Google Fonts import at the top of the CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 /* More refined and beautiful Header Styling */
 .game-header {
   width: 100%;
@@ -58,8 +61,8 @@
 /* Refined Button Style with text-decoration removal */
 .nav-links .pixel-button,
 .nav-links a.pixel-button {
-  padding: 10px 16px;
-  font-family: 'Press Start 2P', cursive;
+  padding: 10px 14px;
+  font-family: 'Bungee', cursive !important;
   font-size: 11px;
   color: #FFD700 !important;
   background: #0277bd !important;
@@ -73,6 +76,7 @@
   text-transform: uppercase;
   text-decoration: none !important; /* Explicitly removing underline */
   position: relative;
+  letter-spacing: -0.5px; /* Bungee is wider than Press Start 2P */
 }
 
 /* Add subtle bottom border instead of underline */
@@ -220,8 +224,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 9px;
+  font-family: 'Bungee', cursive !important;
+  font-size: 10px;
   color: #FFD700;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
@@ -282,6 +286,26 @@
     padding: 8px 12px;
     font-size: 9px;
   }
+}
+
+/* Update the font in Header.css */
+.nav-links .pixel-button,
+.nav-links a.pixel-button,
+.contract-address,
+.address-label,
+.address-value,
+.game-nav a,
+.pixel-button,
+.title-wrapper,
+.game-logo {
+  font-family: 'Bungee', cursive !important;
+}
+
+/* Adjust specific elements that might need size adjustments */
+.nav-links .pixel-button,
+.nav-links a.pixel-button {
+  font-size: 11px;
+  letter-spacing: -0.5px;
 }
 
 

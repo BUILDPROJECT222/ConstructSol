@@ -96,12 +96,12 @@ const Leaderboard = () => {
     <div className="leaderboard-page">
       <Header />
       <div className="leaderboard-container">
-        <h2 className="leaderboard-title">🏆 Top Farmers 🏆</h2>
+        <h2 className="leaderboard-title">🏆 Top Assets Sold 🏆</h2>
         <div className="leaderboard-table">
           <div className="leaderboard-header">
             <div className="rank-column">Rank</div>
             <div className="wallet-column">Wallet</div>
-            <div className="score-column">Total Harvests</div>
+            <div className="score-column">Total Construction</div>
             <div className="rewards-column">Total Rewards</div>
           </div>
           {leaderboardData.map((entry, index) => {

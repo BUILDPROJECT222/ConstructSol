@@ -45,16 +45,16 @@ const HarvestConfirmPopup = ({ onConfirm, onCancel, plantName, plantIcon, isLoad
   return (
     <div className="harvest-confirm-popup">
       <div className="harvest-confirm-content">
-        <h3 className="harvest-confirm-title">Confirm Harvest</h3>
+        <h3 className="harvest-confirm-title">Confirm Sell</h3>
         <p className="harvest-confirm-message">
-          Are you sure you want to harvest your:
+          Are you sure you want to Sell your:
         </p>
         <div className="plant-info-container">
           <span className="plant-name">{plantName}</span>
           <span className="plant-icon-container">{plantIcon}</span>
         </div>
         <p className="harvest-confirm-message">
-          You will receive rewards after harvesting.
+          You will receive rewards after Selling.
         </p>
         <div className="harvest-confirm-buttons">
           <button 
@@ -115,9 +115,9 @@ const HarvestSuccessPopup = ({ onClose, plantName, reward, plantIcon }) => {
   return (
     <div className={`harvest-success-popup ${isClosing ? 'closing' : ''}`}>
       <div className="harvest-success-content">
-        <h3 className="harvest-success-title">Harvest Successful!</h3>
+        <h3 className="harvest-success-title">Sell Successful!</h3>
         <p className="harvest-success-message">
-          You have successfully harvested your {plantName}{plantIcon}!
+          You have successfully sold your {plantName}{plantIcon}
         </p>
         <div className="reward-amount">
           + <img 
@@ -220,12 +220,12 @@ const LeaderboardContent = () => {
 
   return (
     <div className="leaderboard-container">
-      <h2 className="leaderboard-title">🏆 Top Farmers 🏆</h2>
+      <h2 className="leaderboard-title">🏆 Top Assets Sold 🏆</h2>
       <div className="leaderboard-table">
         <div className="leaderboard-header">
           <div className="rank-column">Rank</div>
           <div className="wallet-column">Wallet</div>
-          <div className="score-column">Total Harvests</div>
+          <div className="score-column">Total Construction</div>
           <div className="rewards-column">Total Rewards</div>
         </div>
         {leaderboardData.map((entry, index) => {
@@ -388,12 +388,12 @@ const Plot = React.memo(({
 
 // Add new tool for visiting gardens
 const tools = [
-  { id: 'store', name: 'ITEM SHOP', icon: '🌱' },
-  { id: 'garden', name: 'GARDEN AREA', icon: '🏠' },
-  { id: 'history', name: 'HISTORY', icon: '📜' },  
-  { id: 'farm', name: 'FARM', icon: '🚜' },
+  { id: 'store', name: 'CONSTRUCTION SHOP', icon: '🏘️' },
+  { id: 'garden', name: 'CONSTRUCTION AREA', icon: '🚜' },
+  { id: 'history', name: 'HISTORY', icon: '📜' },
   { id: 'leaderboard', name: ' LEADERBOARD', icon: '🏆' },
-  { id: 'visit', name: 'VISIT GARDEN', icon: '👥' }  
+  { id: 'farm', name: 'MONOPOLY', icon: '🎲' },
+  // { id: 'visit', name: 'VISIT CONSTRUCTION', icon: '👥' }
 ];
 
 // Add new component for garden visiting
@@ -456,7 +456,7 @@ const VisitGarden = ({ onVisit }) => {
 
   return (
     <div className="visit-garden-container">
-      <h2>Visit Another Player's Garden</h2>
+      <h2>Visit Another Player's Construction</h2>
       <form onSubmit={handleSubmit} className="visit-garden-form">
         <input
           type="text"
@@ -470,7 +470,7 @@ const VisitGarden = ({ onVisit }) => {
           className="visit-garden-button"
           disabled={isLoading}
         >
-          {isLoading ? 'Loading...' : 'Visit Garden'}
+          {isLoading ? 'Loading...' : 'Visit Construction'}
         </button>
       </form>
       {error && <p className="visit-garden-error">{error}</p>}
@@ -605,10 +605,10 @@ const History = () => {
   if (isLoading) {
     return (
       <div className="history-container">
-        <h2>📜 Harvest History</h2>
+        <h2>📜 Construction Sell History</h2>
         <center>
         <div className="loading-spinner">🔄</div> 
-        <p>Loading your harvest history...</p>
+        <p>Loading your Construction Sell history...</p>
         </center>
       </div>
     );
@@ -617,11 +617,11 @@ const History = () => {
   if (!isActuallyConnected) {
     return (
       <div className="history-container">
-        <h2>📜 Harvest History</h2>
+        <h2>📜 Construction Sell History</h2>
         <p className="connect-wallet-message">
           {!solana ? 
-            "Please install Phantom wallet to view your harvest history." :
-            "Please connect your wallet to view your harvest history."}
+            "Please install Phantom wallet to view your construction sell history." :
+            "Please connect your wallet to view your construction sell history."}
         </p>
       </div>
     );
@@ -630,7 +630,7 @@ const History = () => {
   if (error) {
     return (
       <div className="history-container">
-        <h2>📜 Harvest History</h2>
+        <h2>📜 Construction Sell History</h2>
         <p className="error-message">Error: {error}</p>
       </div>
     );
@@ -638,10 +638,10 @@ const History = () => {
 
   return (
     <div className="history-container">
-      <h2>📜 Your Harvest History</h2>
+      <h2>📜 Construction Sell History</h2>
       <div className="history-table">
         <div className="history-header">
-          <div className="history-cell">Plant</div>
+          <div className="history-cell">Construction</div>
           <div className="history-cell">Reward</div>
           <div className="history-cell">Date</div>
           <div className="history-cell">Transaction</div>
@@ -652,7 +652,6 @@ const History = () => {
               <div className="history-cell">
                 {seedsData.find(seed => seed.id === item.plantType)?.icon}
                 {' '}
-                {item.plantName}
               </div>
               <div className="history-cell">
                 <img 
@@ -681,7 +680,7 @@ const History = () => {
           ))
         ) : (
           <div className="no-history">
-            <p>No harvest history yet. Start farming to see your history!</p>
+            <p>No Construction history yet. Start Building to see your history!</p>
           </div>
         )}
       </div>
@@ -742,13 +741,12 @@ const Play = () => {
   } = useWallet();
 
   const tools = [
-    { id: 'store', name: 'ITEM SHOP', icon: '🌱' },
-    { id: 'garden', name: 'GARDEN AREA', icon: '🏠' },
+    { id: 'store', name: 'CONSTRUCTION SHOP', icon: '🏘️' },
+    { id: 'garden', name: 'CONSTRUCTION AREA', icon: '🚜' },
     { id: 'history', name: 'HISTORY', icon: '📜' },
-    { id: 'farm', name: 'FARM', icon: '🚜' },
     { id: 'leaderboard', name: ' LEADERBOARD', icon: '🏆' },
-    { id: 'visit', name: 'VISIT GARDEN', icon: '👥' }
-    
+    { id: 'farm', name: 'MONOPOLY', icon: '🎲' },
+    // { id: 'visit', name: 'VISIT CONSTRUCTION', icon: '👥' }
   ]
 
   // Update RPC URL constant
@@ -1136,7 +1134,7 @@ const Play = () => {
         console.log('Game state saved successfully for wallet:', currentWalletAddress);
 
         toast.update(loadingToast, {
-          render: `Successfully purchased ${quantity} ${seed.name}${quantity > 1 ? 's' : ''}! ${seed.icon}`,
+          render: `Successfully purchased ${quantity} ${seed.name}${quantity > 1 ? 's' : ''}!`,
           type: "success",
           isLoading: false,
           autoClose: 3000
@@ -1731,7 +1729,7 @@ const Play = () => {
     return (
       <div className="modal-overlay">
         <div className="modal-content harvest-confirm-modal">
-          <h2>Confirm Harvest</h2>
+          <h2>Confirm Sell</h2>
           <div className="harvest-info">
             <div className="plant-info-container">
               <span className="plant-name">{plantedSeed.name}</span>
@@ -1753,7 +1751,7 @@ const Play = () => {
               onClick={handleHarvestConfirm}
               disabled={harvestLoading}
             >
-              {harvestLoading ? 'Harvesting...' : 'Harvest'}
+              {harvestLoading ? 'Selling...' : 'Sell'}
             </button>
             <button 
               className="cancel-button"
@@ -1834,8 +1832,8 @@ const Play = () => {
           setDropdownOpen(false);
         }}
       >
-        <span className="tool-icon">🌾</span>
-        <span className="tool-name">Harvest</span>
+        <span className="tool-icon">💲</span>
+        <span className="tool-name">Sell</span>
       </button>
     </div>
   );
@@ -1955,7 +1953,7 @@ const Play = () => {
     <div className="store-wrapper">
       <div className="store-container">
         <div className="current-balance">
-          Construction Balance:  
+          Balance:  
           <img 
             src={testfunIcon} 
             alt="testfun" 
@@ -2030,7 +2028,7 @@ const Play = () => {
                 >
                   {tokenBalance < totalPrice ? 
                     `Need ${formatBalance(totalPrice - tokenBalance)} Construction token` : 
-                    `Buy ${quantity} Seed${quantity > 1 ? 's' : ''}`}
+                    `Buy ${quantity} Construction${quantity > 1 ? 's' : ''}`}
                 </button>
 
                 {/* Add Sell button */}
@@ -2040,7 +2038,7 @@ const Play = () => {
                     onClick={() => sellSeed({ ...seed, quantity })}
                     disabled={!isWalletConnected || quantity > ownedQuantity}
                   >
-                    {`Sell ${quantity} Seed${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)}`}
+                    {`Sell ${quantity} Construction${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)}`}
                   </button>
                 )}
               </div>
@@ -2166,7 +2164,7 @@ const Play = () => {
     <div className="garden-area">
       <div className="current-balance-garden">
         <div className="balance-content">
-          Construction Balance:  
+          Balance:  
           <img 
             src={testfunIcon} 
             alt="testfun" 
@@ -2225,8 +2223,8 @@ const Play = () => {
               setDropdownOpen(false);
             }}
           >
-            <span className="tool-icon">🌾</span>
-            <span className="tool-name">Harvest</span>
+            <span className="tool-icon">💲</span>
+            <span className="tool-name">Sell</span>
           </button>
         </div>
       </div>
@@ -2486,7 +2484,7 @@ const Play = () => {
   width: 1200px;
   margin: 20px auto;
   padding: 80px;
-  background: #8B4513;
+  background: rgba(0, 137, 123, 0.9);
   box-shadow: 0 2px 10px #FFD700;
   animation: glow 1s infinite;
   font-family: 'Press Start 2P', cursive;
@@ -2539,7 +2537,7 @@ const Play = () => {
 }
 
 .transaction-link {
-  color: #4CAF50;
+  color:rgb(0, 213, 255);
   text-decoration: none;
   padding: 4px 8px;
   border-radius: 4px;
@@ -2548,7 +2546,7 @@ const Play = () => {
 }
 
 .transaction-link:hover {
-  background: rgba(76, 175, 80, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -2647,7 +2645,7 @@ const Play = () => {
     margin-top: 8px;
     background: #FF4444;  /* Warna merah untuk membedakan dengan buy button yang gold */
     border: 3px solid #000;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bungee', cursive !important;
     font-size: 12px;
     color: #000;
     cursor: pointer;
@@ -2978,7 +2976,7 @@ const Play = () => {
         }
 
         toast.update(loadingToast, {
-          render: `Successfully sold ${quantity} ${seed.name}${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)} Construction! ${seed.icon}`,
+          render: `Successfully sold ${quantity} ${seed.name}${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)} Construction!`,
           type: "success",
           isLoading: false,
           autoClose: 3000

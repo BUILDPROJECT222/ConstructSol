@@ -1,3 +1,6 @@
+/* Add Google Fonts import at the top of the CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Apply font globally */
+body, 
+button, 
+input, 
+select, 
+textarea {
+  font-family: 'Bungee', cursive;
 }

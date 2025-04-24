@@ -208,7 +208,7 @@ const Garden = () => {
               to="/play" 
               className="pixel-button demo-button"
             >
-              LET'S PLAY!
+              LET'S BUILD!
             </Link>
           </div>
         </main>

@@ -1,5 +1,6 @@
 /* Pixel Art Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -58,7 +59,7 @@
 
 /* Section Styles */
 .section-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 32px;
   text-align: center;
   margin-bottom: 60px;
@@ -89,7 +90,7 @@
 }
 
 .section-subtitle {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 24px;
   color: #4527a0;
   margin: 40px 0 20px;
@@ -97,13 +98,14 @@
 }
 
 .section-text {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.5;
   text-align: center;
   max-width: 800px;
   margin: 0 auto 40px;
   color: #FFE5B4;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   text-shadow: 1px 1px 0 #000;
 }
 
@@ -136,7 +138,7 @@
 }
 
 .feature-card h4 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 18px;
   color: #FFD700;
   margin-bottom: 15px;
@@ -171,7 +173,7 @@
   background: #7e57c2;
   color: white;
   border-radius: 50%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -191,7 +193,7 @@
 
 .pixel-button {
   padding: 15px 30px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 16px;
   background: #0288d1;
   color: #FFD700;
@@ -354,7 +356,7 @@
 
 /* Feature Text Styling */
 .feature-item h4 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 14px;
   color: #FFD700;
   text-shadow: 2px 2px 0 #000;
@@ -364,7 +366,7 @@
 }
 
 .feature-item p {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 12px;
   line-height: 1.6;
   color: #FFE5B4;
@@ -532,7 +534,7 @@
 }
 
 .tokenomics-item h4 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 14px;
   color: #FFD700;
   text-shadow: 2px 2px 0 #000;
@@ -580,7 +582,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 12px;
   color: #FFD700;
   text-shadow: 1px 1px 0 #000;
@@ -588,7 +590,7 @@
 }
 
 .tokenomics-item p {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 11px;
   line-height: 1.6;
   color: #FFE5B4;
@@ -730,13 +732,13 @@
 .roadmap-point span,
 .bullet,
 .roadmap-list li {
-  font-family: 'Press Start 2P', cursive !important;
+  font-family: 'Bungee', cursive !important;
   color: #FFD700 !important;
 }
 
 /* Phase Tag Styling */
 .phase-tag {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1px;
   margin-bottom: 10px;
   display: block;
@@ -769,14 +771,14 @@
 }
 
 .roadmap-point span {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.5px;
   line-height: 1.8;
   flex: 1;
 }
 
-.bullet {
-  font-size: 10px;
+.roadmap-point .bullet {
+  font-size: 12px;
   margin-right: 12px;
   flex-shrink: 0;
 }
@@ -1008,7 +1010,7 @@
 }
 
 .plot-status {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 18px;
   color: #FFD700;
   margin-bottom: 20px;
@@ -1050,7 +1052,7 @@
 }
 
 .time-remaining {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 14px;
   color: #FFD700;
   margin-top: 15px;
@@ -1063,7 +1065,7 @@
   padding: 12px 25px;
   border-radius: 8px;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 16px;
   margin-top: 20px;
   transition: all 0.3s ease;
@@ -1090,7 +1092,7 @@
   background: #FFD700;
   padding: 8px 16px;
   border-radius: 20px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 14px;
   color: #000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -1463,7 +1465,7 @@
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Bungee', cursive;
   text-transform: uppercase;
   position: relative;
 }
