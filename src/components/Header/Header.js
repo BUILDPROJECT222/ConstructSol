@@ -26,7 +26,7 @@ const Header = () => {
             {/* <span className="pixel-button disabled">PLAY</span> */}
             <Link to="/play" className="pixel-button">PLAY</Link>
             <a 
-              href="https://farm-fun.gitbook.io/farm-fun" 
+              href="" 
               className="pixel-button" 
               target="_blank" 
               rel="noopener noreferrer"

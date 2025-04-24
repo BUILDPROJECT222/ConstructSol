@@ -10,51 +10,52 @@ import marketplaceIcon from '../../assets/planting.png';
 import breedingIcon from '../../assets/harvest.png';
 import seasonsIcon from '../../assets/Premium/Objects/Piknik basket.png';
 import communityIcon from '../../assets/Premium/Objects/Items/egg-items.png';
-import rewardsIcon from '../../assets/leaderboard.png';
+import rewardsIcon from '../../assets/tower.png';
 import welcomeLogo from '../../assets/background.PNG'; 
+
+// Import building icons
+import houseIcon from '../../assets/house.png';
+import apartmentIcon from '../../assets/apartment.png';
+import storeIcon from '../../assets/store.png';
+import storeIcon1 from '../../assets/store1.png';
+import storeIcon2 from '../../assets/store2.png';
+import factoryIcon from '../../assets/factory.png';
+
+import { seeds } from '../constants/seeds';
+
+// Create BUILDINGS constant using data from seeds
+const BUILDINGS = seeds.map((building, index) => ({
+  id: index + 1,
+  title: building.name,
+  description: building.description,
+  icon: building.imgSrc,
+  price: building.price,
+  reward: building.reward,
+  constructionTime: building.growthTime,
+  altText: `Pixel art of ${building.name}`
+}));
 
 const FEATURES = [
   {
     id: 1,
-    title: "Item Shop",
-    description: "The Seed Market offers a variety of seeds for players to purchase and plant. Choose wisely, as different seeds may yield different rewards!",
-    icon: farmingIcon,
-    altText: "Pixel art of item shop"
+    title: "Construction",
+    description: "Construct and upgrade buildings to improve your assets productivity. Customize your layout and unlock new features as your assets grows.",
+    icon: rewardsIcon,
+    altText: "Pixel art of Construction"
   },
   {
     id: 2,
-    title: "Planting",
-    description: "Planting is simple—select the seeds you own and click on the desired plot to start growing.",
-    icon: marketplaceIcon,
-    altText: "Pixel art of planting"
+    title: "Monopoly",
+    description: "Buy land, trade resources, and outmaneuver other players to become the dominant force in the farming economy.",
+    icon: seasonsIcon,
+    altText: "Pixel art of monopoly"
   },
   {
     id: 3,
-    title: "Harvest",
-    description: "Once the seeds are fully grown, you can harvest them to claim your rewards based on the time duration you selected. The longer you wait, the bigger the yield!",
-    icon: breedingIcon,
-    altText: "Pixel art of harvest"
-  },
-  {
-    id: 4,
-    title: "Leaderboard",
-    description: "The Leaderboard showcases the top farmers based on their planting and harvesting skills. Compete to be the best and prove you're the ultimate farmer!",
-    icon: rewardsIcon,
-    altText: "Pixel art of leaderboard"
-  },
-  {
-    id: 5,
-    title: "Community Gardens",
-    description: "Join forces with other players to create and maintain community gardens with shared rewards.",
-    icon: seasonsIcon,
-    altText: "Pixel art of community garden"
-  },
-  {
-    id: 6,
-    title: "Seasonal Events",
-    description: "Experience different seasons with unique plants, special events, and limited-time rewards.",
+    title: "Social",
+    description: "Interact with friends, and participate in fun community events. Construction is better together!",
     icon: communityIcon,
-    altText: "Pixel art of seasonal events"
+    altText: "Pixel art of social"
   }
 ];
 
@@ -62,77 +63,74 @@ const ROADMAP_ITEMS = [
   {
     id: 1,
     phase: "Phase 1",
-    title: "Foundation & Alpha Test",
+    title: "Foundations of the Build",
     description: [
-      "Concept development & tokenomics design",
-      "Devnet smart contract deployment & initial security testing",
-      "Alpha Test Launch for early testers to experience core mechanics",
-      "Bug fixes & gameplay refinements based on tester feedback"
+      "Design game mechanics and tokenomics",
+      "Deploy smart contracts to devnet for testing",
+      "Launch Early Access for limited users",
+      "Collect feedback, patch bugs, and refine mechanics"
     ],
     status: "done"  
   },
   {
     id: 2,
     phase: "Phase 2",
-    title: "Demo Launch & Community Growth",
+    title: "Rise of the Builders",
     description: [
       "Launch of Construction Demo, allowing users to experience the farming system",
       "Community building & social media presence",
       "UI/UX improvements based on alpha test insights"
     ],
-    status: "done"
+    status: "in-progress"
   },
   {
     id: 3,
     phase: "Phase 3",
-    title: "Core Features & Gameplay Expansion",
+    title: "Marketplace & Gameplay Core",
     description: [
-      "Implementation of Seed Market & Item Shop",
-      "Full Planting & Harvesting mechanics integration",
-      "Leaderboard system to track top farmers",
-      "Further UI/UX refinements for a seamless experience"
+      "Launch Blueprint Marketplace & Building Shop",
+      "Activate full construction-to-revenue gameplay",
+      "Launch leaderboard & prestige system",
+      "Add visual upgrades & sound elements"
     ],
-    status: "done"
+    status: "upcoming"
   },
   {
     id: 4,
     phase: "Phase 4",
-    title: "Official Launch & Expansion",
+    title: "Official Launch",
     description: [
-      "Construction Token official launch",
-      "Farming competitions & exclusive events",
-      "Partnerships & collaborations for ecosystem growth",
-      "Ongoing updates & feature enhancements"
+      "Official ConstructSol Token launch",
+      "Start building competitions & leaderboard rewards",
+      "Partner with other Solana-based projects",
+      "Host limited-time build events"
     ],
-    status: "in-progress"
+    status: "upcoming"
   },
   {
     id: 5,
     phase: "Phase 5",
-    title: "Ecosystem Growth & Optimization",
+    title: "Strategic Expansion",
     description: [
-      "Advanced farming strategies & new seed types",
-      "Gameplay optimizations for sustainability & efficiency",
-      "Staking rewards & expanded token utilities",
-      "Community-driven governance discussions"
+      "Introduce smart tech utilities (boost output or reduce build time)",
+      "Enable staking utility beyond construction",
+      "Explore multiplayer build mechanics"
     ],
     status: "upcoming"
   },
   {
     id: 6,
-    phase: "Phase 6",
-    title: "Long-Term Vision & Sustainability",
+    phase: "hase 6",
+    title: "Future Possibilities",
     description: [
-      "Integration of new game modes & farming mechanics",
-      "Cross-platform expansion & metaverse potential",
-      "Further decentralization & community-driven updates",
-      "Continuous improvements to keep Construction thriving"
+      "Player governance via DAO",
+      "Community-chosen mega builds or events",
+      "(Optional) Explore deeper systems like population or city zones",
+      "Continuous updates based on builder feedback"
     ],
     status: "upcoming"
   }
 ];
-
-
 
 const Garden = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -184,6 +182,9 @@ const Garden = () => {
     // Observe feature items
     document.querySelectorAll('.feature-item').forEach(el => observer.observe(el));
     
+    // Observe building items
+    document.querySelectorAll('.building-item').forEach(el => observer.observe(el));
+    
     // Observe roadmap items
     document.querySelectorAll('.roadmap-item').forEach(el => observer.observe(el));
 
@@ -228,6 +229,27 @@ const Garden = () => {
                 </div>
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Buildings Section */}
+        <section className="content-container buildings-section">
+          <h2 className="section-title">Buildings</h2>
+          <div className="feature-grid-detailed">
+            {BUILDINGS.map((building) => (
+              <div key={building.id} className="feature-item building-item">
+                <div className="feature-icon-wrapper">
+                  <img 
+                    src={building.icon} 
+                    alt={building.altText}
+                    className="feature-icon"
+                  />
+                </div>
+                <h4>{building.title}</h4>
+                <p>{building.description}</p>
+              
               </div>
             ))}
           </div>

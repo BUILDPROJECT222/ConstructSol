@@ -1555,3 +1555,56 @@
 .roadmap-item.done .phase-tag {
   color: #32CD32;
 }
+
+/* Add these styles for the Buildings section */
+.buildings-section {
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  background-color:rgba(0, 137, 123, 0.9);
+  border-radius: 8px;
+  border: 2px solid #4a4e69;
+}
+
+.building-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.building-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.building-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 1px solid #4a4e69;
+}
+
+.building-price, .building-reward, .building-time {
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.building-price::before, .building-reward::before, .building-time::before {
+  content: '•';
+  color: #ffd700;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Add animation for building items */
+.building-item.animate {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .building-details {
+    font-size: 0.8rem;
+  }
+}

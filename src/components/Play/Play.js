@@ -1924,7 +1924,7 @@ const Play = () => {
           /> 
         <h2>Connect Wallet Required</h2>
         <div className="wallet-prompt-devnet">
-        <p>Please connect your Phantom wallet using Mainnet to access the game</p>
+        <p>Please connect your Phantom wallet using Devnet to access the game</p>
         </div>
         <button onClick={connectWallet} className="connect-wallet-btn">
           {!window.solana?.isPhantom ? 'Install Phantom Wallet' : 'Connect Wallet'}
