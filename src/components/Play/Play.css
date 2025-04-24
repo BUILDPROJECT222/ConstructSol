@@ -1040,7 +1040,7 @@
 .seed-options {
   position: absolute;
   top: calc(100% + 10px);
-  left: -90px;
+  left: 10px;
   width: 350px;
   max-height: 400px;
   overflow-y: auto;
@@ -1377,61 +1377,39 @@ position: center;
 .plot-progress-content {
   color: white;
   text-align: center;
-  font-family: 'Bungee', cursive !important;
-  padding: 15px;
+  padding: 5px;
 }
 
-.plot-progress-content h3 {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-  color: #4CAF50;
+.plot-progress-content h4 {
+  font-size: 16px;
+  color: #FFD700;
+  margin-bottom: 10px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.plot-progress-content p {
-  font-size: 1em;
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
-.plot-progress-bar {
+.progress-bar {
   width: 100%;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin: 15px 0;
+  margin: 10px 0;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.plot-progress-bar-fill {
+.progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #29b6f6, #00897b);
+  background: linear-gradient(90deg, #0bdf4e, #00897b);
   transition: width 0.3s ease;
   border-radius: 8px;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  .plot-progress {
-    min-width: 250px;
-    padding: 15px;
-  }
-
-  .plot-progress-content h3 {
-    font-size: 1em;
-  }
-
-  .plot-progress-content p {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .plot-progress {
-    min-width: 200px;
-    padding: 10px;
-  }
+.time-remaining {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 5px;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .wallet-prompt {
@@ -1652,7 +1630,7 @@ position: center;
 
 
 .store-item {
-  background: ;
+  /* background: ; */
   border: 2px solid #FFD700;
   border-radius: 10px;
   padding: 15px;
@@ -3258,48 +3236,72 @@ position: relative;
 }
 
 .plot-progress-popup {
-  position: fixed; 
-  top: 100%; 
-  right: -240px; 
-  width: 280px;
-  background: rgba(0, 0, 0, 0.8);
+  position: absolute; 
+  top: -170px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: rgba(0, 0, 0, 0.95);
   border: 2px solid #FFD700;
   border-radius: 10px;
   padding: 15px;
   color: white;
   font-family: 'Bungee', cursive !important;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-  z-index: 9;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  z-index: 900;
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   display: none;
-  transform: translateY(10px) rotate(5deg) perspective(800px) rotateX(-80deg); 
-  transform-origin: center;
   pointer-events: none;
-  
+  animation: popup-fade 0.3s ease-in-out;
+  rotate: -6deg;
+}
+
+.plot-progress-popup::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #FFD700;
 }
 
 .plot:hover .plot-progress-popup {
-  /* transform: translateY(10px) rotate(5deg) perspective(800px) rotateX(-80deg);  */
-  /* z-index: 9999; */
   display: block;
+  opacity: 1;
+  
+}
+
+@keyframes popup-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 @media (max-width: 1400px) {
   .plot-progress-popup {
-    width: 250px;
+    width: 280px;
     padding: 12px;
-    font-size: 0.9em;
+    font-size: 1.1em;
+    top: -110px;
   }
 }
 
 @media (max-width: 768px) {
   .plot-progress-popup {
-    top: 100px;
-    left: 10px;
-    width: 220px;
+    width: 250px;
     padding: 10px;
-    font-size: 0.8em;
+    font-size: 1em;
+    top: -100px;
   }
 }
 
@@ -3310,7 +3312,7 @@ position: relative;
 }
 
 .plot-progress-content h4 {
-  font-size: 14px;
+  font-size: 16px;
   color: #FFD700;
   margin-bottom: 15px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -3334,7 +3336,7 @@ position: relative;
 }
 
 .time-remaining {
-  font-size: 12px;
+  font-size: 17px;
   color: #ffffff;
   margin-top: 10px;
   text-align: center;
@@ -3938,6 +3940,7 @@ position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse; /* This changes the order of flex items */
   padding: 8px 12px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -3948,6 +3951,19 @@ position: relative;
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1; /* Lower than dropdown */
+}
+
+/* Add new styling for the garden tools inside balance container */
+.current-balance-garden .garden-tools {
+  margin-left: 10px; /* This pushes the tools all the way to the left */
+  display: flex;
+  align-items: center;
+}
+
+.current-balance-garden .balance-content {
+  margin-left: auto; /* This pushes the balance all the way to the right */
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive adjustments */

@@ -59,7 +59,7 @@ export const seeds = [
     price: 200,
     reward: 600,
     // growthTime: 86400, // 1.5 hours
-    growthTime: 1200,
+    growthTime: 3600,
   },
   // {
   //   id: 'factory',

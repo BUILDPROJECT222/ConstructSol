@@ -297,7 +297,7 @@ const Plot = React.memo(({
       {plot.isWatered && <div className="water-effect" />}
       {plot.readyToHarvest && <div className="harvest-effect" />}
       
-      {isHoveredPlot && plot.planted && (
+      {isHoveredPlot && plot.planted && !plot.readyToHarvest && (
         <div className="plot-info-popup">
           <div className="plot-info-content">
             <div className="plot-info-header">
@@ -2114,7 +2114,7 @@ const Play = () => {
                 ))}
               </div>
             </div>
-            {hoveredPlot === index && renderPlotProgress(plot)}
+            {hoveredPlot === index && !plot.readyToHarvest && renderPlotProgress(plot)}
           </div>
         </>
       );
@@ -2127,7 +2127,7 @@ const Play = () => {
         {plot.readyToHarvest && (
           <div className="harvest-ready-indicator">✨</div>
         )}
-        {hoveredPlot === index && renderPlotProgress(plot)}
+        {hoveredPlot === index && !plot.readyToHarvest && renderPlotProgress(plot)}
       </>
     );
   };
