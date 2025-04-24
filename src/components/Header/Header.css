@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 16px 24px;
   background: rgba(2, 136, 209, 0.8);
   /* Removed border */
   border-radius: 8px;
@@ -54,25 +54,25 @@
 
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 22px;
   align-items: center;
 }
 
 /* Refined Button Style with text-decoration removal */
 .nav-links .pixel-button,
 .nav-links a.pixel-button {
-  padding: 10px 14px;
+  padding: 12px 20px;
   font-family: 'Bungee', cursive !important;
-  font-size: 11px;
+  font-size: 14px;
   color: #FFD700 !important;
   background: #0277bd !important;
   /* Removed border */
-  border-radius: 5px;
+  border-radius: 6px;
   transition: all 0.2s ease;
   box-shadow: 
-    inset -2px -2px 0 0 #01579b,
-    inset 2px 2px 0 0 #29b6f6,
-    0 3px 6px rgba(0, 0, 0, 0.2);
+    inset -3px -3px 0 0 #01579b,
+    inset 3px 3px 0 0 #29b6f6,
+    0 4px 8px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   text-decoration: none !important; /* Explicitly removing underline */
   position: relative;
@@ -111,14 +111,14 @@
 /* Adjusted Play Button - consistent with other buttons but with special effects */
 .nav-links a.pixel-button[href="/play"] {
   /* Match the base styling of other buttons */
-  padding: 10px 16px;
-  font-size: 11px;
+  padding: 12px 22px;
+  font-size: 14px;
   background: #0277bd !important;
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 
-    inset -2px -2px 0 0 #01579b,
-    inset 2px 2px 0 0 #29b6f6,
-    0 3px 6px rgba(0, 0, 0, 0.2);
+    inset -3px -3px 0 0 #01579b,
+    inset 3px 3px 0 0 #29b6f6,
+    0 4px 8px rgba(0, 0, 0, 0.2);
   
   /* Special effects while maintaining consistency */
   background: linear-gradient(to bottom, #0288d1, #00897b) !important;
@@ -274,6 +274,12 @@
     margin: 10px auto;
     width: fit-content;
   }
+  
+  .nav-links .pixel-button,
+  .nav-links a.pixel-button {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -283,8 +289,8 @@
   
   .nav-links .pixel-button,
   .nav-links a.pixel-button {
-    padding: 8px 12px;
-    font-size: 9px;
+    padding: 8px 14px;
+    font-size: 11px;
   }
 }
 
@@ -304,7 +310,7 @@
 /* Adjust specific elements that might need size adjustments */
 .nav-links .pixel-button,
 .nav-links a.pixel-button {
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: -0.5px;
 }
 
