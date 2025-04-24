@@ -288,6 +288,36 @@
   margin: 0 auto;
 }
 
+/* Add specific styling for buildings grid with 5 items */
+.buildings-section .feature-grid-detailed {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1400px;
+}
+
+/* Make the building items a bit narrower to fit 5 in a row */
+.buildings-section .feature-item {
+  min-height: 280px;
+}
+
+/* Responsive adjustments for buildings section */
+@media (max-width: 1400px) {
+  .buildings-section .feature-grid-detailed {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .buildings-section .feature-grid-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .buildings-section .feature-grid-detailed {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Feature Item Styling */
 .feature-item {
   background: rgba(0, 137, 123, 0.9);
