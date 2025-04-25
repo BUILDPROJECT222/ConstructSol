@@ -1042,8 +1042,9 @@
   top: calc(100% + 10px);
   left: 10px;
   width: 350px;
-  max-height: 400px;
-  overflow-y: auto;
+  /* Remove max-height and overflow-y to show all items */
+  max-height: none;
+  overflow-y: visible;
   background: rgba(0, 0, 0, 0.95);
   border: 2px solid #FFD700;
   border-radius: 12px;
@@ -1054,7 +1055,7 @@
   display: block;
 }
 
-.seed-option {
+/* .seed-option {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1065,7 +1066,7 @@
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
-}
+} */
 
 .seed-option {
   display: grid;
@@ -1080,6 +1081,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 8px;
+  margin-bottom: 5px;
 }
 
 .seed-icon {
@@ -3237,9 +3239,9 @@ position: relative;
 
 .plot-progress-popup {
   position: fixed; 
-  top: -280px; 
+  top: -320px; 
   left: 80%;
-  transform: translateX(-50%) rotateX(-34deg) rotateZ(-6.5deg);
+  transform: translateX(-50%) rotateX(-38deg) rotateZ(-7deg);
   transform-style: preserve-3d;
   width: 320px;
   background: rgba(0, 0, 0, 0.95);
@@ -3279,11 +3281,11 @@ position: relative;
 @keyframes popup-fade {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-50px) rotateX(-34deg) rotateZ(-6.5deg);
+    transform: translateX(-50%) translateY(-50px) rotateX(-38deg) rotateZ(-7deg);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) rotateX(-34deg) rotateZ(-6.5deg);
+    transform: translateX(-50%) translateY(0) rotateX(-38deg) rotateZ(-7deg);
   }
 }
 
@@ -3293,7 +3295,7 @@ position: relative;
     padding: 12px;
     font-size: 1.1em;
     top: -110px;
-    transform: translateX(-50%) rotateX(-34deg) rotateZ(-6.5deg);
+    transform: translateX(-50%) rotateX(-38deg) rotateZ(-7deg);
   }
 }
 
@@ -3303,7 +3305,7 @@ position: relative;
     padding: 10px;
     font-size: 1em;
     top: -100px;
-    transform: translateX(-50%) rotateX(-34deg) rotateZ(-6.5deg);
+    transform: translateX(-50%) rotateX(-38deg) rotateZ(-7deg);
   }
 }
 
@@ -3949,7 +3951,6 @@ position: relative;
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin-bottom: 12px;
   position: relative;
-  backdrop-filter: blur(2px);
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1; /* Lower than dropdown */
