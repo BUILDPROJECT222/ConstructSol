@@ -1368,7 +1368,7 @@ const Play = () => {
 
       if (userTokenBalance < requiredTokens) {
         console.log('Insufficient tokens:', { userTokenBalance, requiredTokens });
-        toast.error(`You need ${requiredTokens} farmfun tokens to unlock a new plot. Current balance: ${userTokenBalance}`);
+        toast.error(`You need ${requiredTokens} ConstructSol tokens to unlock a new plot. Current balance: ${userTokenBalance}`);
         return;
       }
 
