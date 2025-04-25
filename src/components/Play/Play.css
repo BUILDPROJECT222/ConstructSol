@@ -3236,9 +3236,9 @@ position: relative;
 }
 
 .plot-progress-popup {
-  position: absolute; 
-  top: -210px; 
-  left: 72%;
+  position: fixed; 
+  top: -280px; 
+  left: 80%;
   transform: translateX(-50%) rotateX(-34deg) rotateZ(-6.5deg);
   transform-style: preserve-3d;
   width: 320px;
@@ -3267,7 +3267,7 @@ position: relative;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #FFD700;
+  /* border-top: 10px solid #FFD700; */
 }
 
 .plot:hover .plot-progress-popup {
