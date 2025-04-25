@@ -1596,16 +1596,16 @@ const Play = () => {
         await checkTokenBalance(solana.publicKey);
       }
       
-      toast.success('Harvest successful!');
+      toast.success('Sell successful!');
 
     } catch (error) {
-      console.error('Harvest error:', error);
+      console.error('Sell error:', error);
       
       if (error.message.includes('User rejected')) {
         toast.error('Transaction was rejected by user');
         return; 
       } else {
-        toast.error(`Harvest failed: ${error.message}`);
+        toast.error(`Sell failed: ${error.message}`);
       }
     } finally {
       setHarvestLoading(false);
@@ -1902,8 +1902,8 @@ const Play = () => {
             {harvestNotification.seedType.icon}
           </div>
           <div className="notification-text">
-            <h3>Harvest Success!</h3>
-            <p>You harvested {harvestNotification.seedType.name}</p>
+            <h3>Sell Success!</h3>
+            <p>You Sell {harvestNotification.seedType.name}</p>
             <p className="reward-text">
               +{harvestNotification.reward} coins
             </p>
