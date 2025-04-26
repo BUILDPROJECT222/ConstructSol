@@ -11,55 +11,51 @@ export const seeds = [
     name: 'Luxury Villa',
     imgSrc: houseIcon,
     icon: <img src={houseIcon} alt="House" width="70" height="70" />,
-    description: 'An elegant residential property with premium amenities yielding top-tier rental income',
+    description: 'High-end residential income boost',
     price: 300,
     reward: 315,
     // growthTime: 5400, // Construction time in seconds
-    growthTime: 5,
+    growthTime: 10,
   },
   {
     id: 'apartment',
     name: 'Sky Tower Residences',
     imgSrc: apartmentIcon,
     icon: <img src={apartmentIcon} alt="Apartment" width="70" height="70" />,
-    description: 'A prestigious high-rise with panoramic views and luxury units commanding premium rents',
+    description: 'Vertical housing, stable returns',
     price: 300,
     reward: 345,
-    // growthTime: 10800, // 2 hours
-    growthTime: 10,
+    growthTime: 10800, // 1.5 hours
   },
   {
     id: 'store',
     name: 'Boutique Emporium',
     imgSrc: storeIcon,
     icon: <img src={storeIcon} alt="Store" width="70" height="70" />,
-    description: 'An upscale shopping destination featuring exclusive merchandise and a devoted clientele',
+    description: 'Small shop, fast revenue',
     price: 300,
     reward: 420,
-    // growthTime: 21600, // 1.5 hours
-    growthTime: 10,
+    growthTime: 21600, 
   },
   {
     id: 'store1',
     name: 'Corner Marketplace',
     imgSrc: storeIcon1,
     icon: <img src={storeIcon1} alt="Store1" width="70" height="70" />,
-    description: 'A strategically located mini-market with constant customer flow and high-margin impulse buys',
+    description: 'Compact business, consistent flow',
     price: 300,
     reward: 570,
-    // growthTime: 43200, // 1.5 hours
-    growthTime: 30,
+    growthTime: 43200, 
   },
   {
     id: 'store2',
     name: 'Mega Mall Complex',
     imgSrc: storeIcon2,
     icon: <img src={storeIcon2} alt="Store2" width="70" height="70" />,
-    description: 'A sprawling commercial paradise with entertainment venues, food courts and flagship stores',
+    description: 'Large-scale income generator',
     price: 300,
     reward: 900,
-    // growthTime: 86400, // 1.5 hours
-    growthTime: 3600,
+    growthTime: 86400, // 1.5 hours
   },
   // {
   //   id: 'factory',

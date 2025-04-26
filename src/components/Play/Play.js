@@ -725,6 +725,9 @@ const Play = () => {
   const [visitedGarden, setVisitedGarden] = useState(null);
   // Add click handling state
   const [isProcessing, setIsProcessing] = useState(false);
+  // Add hammer functionality states
+  const [hammerPoints, setHammerPoints] = useState(0);
+  const [isHammerActive, setIsHammerActive] = useState(false);
 
   // Destructure fullWalletAddress from useWallet
   const { 
@@ -746,6 +749,7 @@ const Play = () => {
     { id: 'history', name: 'HISTORY', icon: '📜' },
     { id: 'leaderboard', name: ' LEADERBOARD', icon: '🏆' },
     { id: 'farm', name: 'MONOPOLY', icon: '🎲' },
+    { id: 'nft', name: 'SOCIAL', icon: '👥' },
     // { id: 'visit', name: 'VISIT CONSTRUCTION', icon: '👥' }
   ]
 
@@ -1110,6 +1114,7 @@ const Play = () => {
         const gameState = {
           plots,
           userSeeds: updatedUserSeeds,
+          hammerPoints,
           lastUpdated: new Date().toISOString()
         };
 
@@ -1208,10 +1213,25 @@ const Play = () => {
         console.log('Current userSeeds before load:', userSeeds);
         console.log('Loaded userSeeds:', data.userSeeds);
 
+        // Debug logging for hammerPoints
+        console.log('Raw hammerPoints in response:', { 
+          directHammerPoints: data.hammerPoints,
+          nestedHammerPoints: data.gameData?.hammerPoints,
+          dataStructure: JSON.stringify(data, null, 2)
+        });
+
         setPlots(data.plots);
         setUserSeeds(data.userSeeds);
+        
+        // Check if hammerPoints is nested within gameData object or directly in data
+        const loadedHammerPoints = data.gameData && data.gameData.hammerPoints 
+          ? data.gameData.hammerPoints 
+          : data.hammerPoints || 0;
+          
+        setHammerPoints(loadedHammerPoints);
 
         console.log('UserSeeds after setState:', data.userSeeds);
+        console.log('HammerPoints loaded:', loadedHammerPoints);
         
         return data;
       } catch (error) {
@@ -1221,10 +1241,10 @@ const Play = () => {
     };
 
     loadGameData();
-  }, [isWalletConnected, fullWalletAddress]);  // Update dependency array
+  }, [isWalletConnected, fullWalletAddress]);
 
   // Update saveGameData function
-  const saveGameData = async (updatedPlots, updatedSeeds) => {
+  const saveGameData = async (updatedPlots, updatedSeeds, updatedHammerPoints = hammerPoints) => {
     try {
       // Get wallet address directly from window.solana to ensure we have the full address
       const currentWalletAddress = window.solana?.publicKey?.toString();
@@ -1273,6 +1293,7 @@ const Play = () => {
           };
         }),
         userSeeds: updatedSeeds || {},
+        hammerPoints: updatedHammerPoints,
         lastUpdated: new Date().toISOString()
       };
 
@@ -1313,7 +1334,7 @@ const Play = () => {
       setPlots(updatedPlots);
       
       // Replace saveUserData with saveGameData
-      await saveGameData(updatedPlots, userSeeds);
+      await saveGameData(updatedPlots, userSeeds, hammerPoints);
       
     } catch (error) {
       console.error('Error watering plot:', error);
@@ -1410,7 +1431,7 @@ const Play = () => {
       const currentWalletAddress = solana.publicKey.toString();
       console.log('Saving with wallet address:', currentWalletAddress);
 
-      await saveGameData(updatedPlots, updatedSeeds);
+      await saveGameData(updatedPlots, updatedSeeds, hammerPoints);
 
       toast.success('Seed planted successfully!');
     } catch (error) {
@@ -1438,7 +1459,7 @@ const Play = () => {
       setPlots(updatedPlots);
       
       // Replace saveUserData with saveGameData
-      await saveGameData(updatedPlots, userSeeds);
+      await saveGameData(updatedPlots, userSeeds, hammerPoints);
       
     } catch (error) {
       console.error('Error updating growth stage:', error);
@@ -1583,8 +1604,13 @@ const Play = () => {
       });
       setPlots(updatedPlots);
 
-      // Save game data dan tampilkan success notification
-      await saveGameData(updatedPlots, userSeeds);
+      // Increment hammer points after successful sale
+      const updatedHammerPoints = hammerPoints + 1;
+      setHammerPoints(updatedHammerPoints);
+      console.log('Hammer points increased:', updatedHammerPoints);
+
+      // Save game data with updated hammer points
+      await saveGameData(updatedPlots, userSeeds, updatedHammerPoints);
       setHarvestSuccessInfo({
         plantName: plantedSeed.name,
         plantIcon: plantedSeed.icon,
@@ -1854,9 +1880,12 @@ const Play = () => {
 
       const now = Date.now();
       const growthTimeMs = seed.growthTime * 1000;
+      // Apply watering speed boost
+      const adjustedGrowthTimeMs = plot.isWatered ? growthTimeMs / 2 : growthTimeMs;
+      
       const timePassed = now - plantedTime;
-      const progress = Math.min((timePassed / growthTimeMs) * 100, 100);
-      const timeRemaining = Math.max(growthTimeMs - timePassed, 0);
+      const progress = Math.min((timePassed / adjustedGrowthTimeMs) * 100, 100);
+      const timeRemaining = Math.max(adjustedGrowthTimeMs - timePassed, 0);
 
       // Format remaining time
       const formatTimeRemaining = (ms) => {
@@ -2225,6 +2254,20 @@ const Play = () => {
           >
             <span className="tool-icon">💲</span>
             <span className="tool-name">Sell</span>
+          </button>
+
+          {/* Add HAMMER button */}
+          <button 
+            className={`garden-tool hammer-tool ${isHammerActive ? 'active' : ''}`}
+            data-tool="hammer"
+            onClick={useHammer}
+            disabled={!canUseHammer()}
+            title={canUseHammer() ? 
+              'Speed up all construction by 20%' : 
+              `Need ${5 - hammerPoints} more points (${hammerPoints}/5)`}
+          >
+            <span className="tool-icon">🔨</span>
+            <span className="tool-name">Hammer ({hammerPoints}/5)</span>
           </button>
         </div>
       </div>
@@ -2807,6 +2850,7 @@ const Play = () => {
         const gameState = {
           plots,
           userSeeds,
+          hammerPoints,
           lastUpdated: new Date().toISOString()
         };
 
@@ -2843,12 +2887,12 @@ const Play = () => {
       clearInterval(autoSaveInterval);
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, [isWalletConnected, fullWalletAddress, plots, userSeeds, hasUnsavedChanges]);
+  }, [isWalletConnected, fullWalletAddress, plots, userSeeds, hammerPoints, hasUnsavedChanges]);
 
   // Update hasUnsavedChanges when relevant game state changes
   useEffect(() => {
     setHasUnsavedChanges(true);
-  }, [plots, userSeeds]);
+  }, [plots, userSeeds, hammerPoints]);
 
   // Add new sellSeed function
   const sellSeed = async (seedWithQuantity) => {
@@ -2954,6 +2998,7 @@ const Play = () => {
         const gameState = {
           plots,
           userSeeds: updatedUserSeeds,
+          hammerPoints,
           lastUpdated: new Date().toISOString()
         };
 
@@ -3050,6 +3095,96 @@ const Play = () => {
     }
     
     return gridPlots;
+  };
+
+  // Add function to check if hammer can be used
+  const canUseHammer = () => {
+    return hammerPoints >= 5;
+  };
+
+  // Add function to use hammer and speed up construction
+  const useHammer = async () => {
+    // Check if hammer can be used
+    if (!canUseHammer()) {
+      toast.error('You need at least 5 hammer points to use this tool!');
+      return;
+    }
+
+    // Check if there are any buildings under construction
+    const hasBuildingsInProgress = plots.some(plot => 
+      plot.planted && !plot.readyToHarvest
+    );
+
+    if (!hasBuildingsInProgress) {
+      toast.error('There are no buildings under construction!');
+      return;
+    }
+
+    try {
+      // Update all plots that are currently under construction
+      const updatedPlots = plots.map(plot => {
+        if (!plot.planted || plot.readyToHarvest) {
+          return plot;
+        }
+
+        // Calculate new plantedAt time by moving it 20% forward in time
+        const plantedTime = new Date(plot.plantedAt).getTime();
+        const now = Date.now();
+        const seedData = seedsData.find(s => s.id === plot.plantType);
+        
+        if (!seedData) {
+          return plot;
+        }
+
+        // Calculate total growth time in milliseconds
+        let totalGrowthTime = seedData.growthTime * 1000;
+        if (plot.isWatered) {
+          totalGrowthTime = totalGrowthTime / 2; // Already reduced by watering
+        }
+
+        // Calculate time elapsed and remaining
+        const elapsed = now - plantedTime;
+        const remaining = Math.max(0, totalGrowthTime - elapsed);
+        
+        // Reduce remaining time by 20%
+        const reduction = remaining * 0.2;
+        
+        // Calculate new plantedAt to reflect the time reduction
+        const newPlantedAt = new Date(plantedTime - reduction);
+        
+        console.log('Hammer used on plot:', {
+          seedType: plot.plantType,
+          originalPlantedAt: new Date(plantedTime).toISOString(),
+          newPlantedAt: newPlantedAt.toISOString(),
+          timeReductionMs: reduction
+        });
+
+        return {
+          ...plot,
+          plantedAt: newPlantedAt.toISOString()
+        };
+      });
+
+      // Update state with modified plots
+      setPlots(updatedPlots);
+      
+      // Deduct hammer points
+      const newHammerPoints = hammerPoints - 5;
+      setHammerPoints(newHammerPoints);
+      
+      // Set hammer as active temporarily for visual feedback
+      setIsHammerActive(true);
+      setTimeout(() => setIsHammerActive(false), 3000);
+      
+      // Save updated state
+      await saveGameData(updatedPlots, userSeeds, newHammerPoints);
+      
+      toast.success('Hammer activated! All construction times reduced by 20%');
+      
+    } catch (error) {
+      console.error('Error using hammer:', error);
+      toast.error('Failed to use hammer tool');
+    }
   };
 
   return (

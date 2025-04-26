@@ -2,10 +2,16 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/header.png'; // Adjust with your logo path
+import { useWallet } from '../../context/WalletContext';
 
 const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isPlayPage = location.pathname === '/play';
+  const { isWalletConnected } = useWallet();
+
+  // Hide leaderboard only when on play page AND wallet is connected
+  const shouldHideLeaderboard = isPlayPage && isWalletConnected;
 
   return (
     <header className="game-header">
@@ -27,14 +33,16 @@ const Header = () => {
             {/* <span className="pixel-button disabled">PLAY</span> */}
             <Link to="/play" className="pixel-button">PLAY</Link>
             <a 
-              href="" 
+              href="https://constructs-organization.gitbook.io/constructsol" 
               className="pixel-button" 
               target="_blank" 
               rel="noopener noreferrer"
             >
               WHITEPAPER
             </a>
-            <Link to="/leaderboard" className="pixel-button">LEADERBOARD</Link>
+            {!shouldHideLeaderboard && ( //leaderboard tidak ada di play page jika wallet sudah terkoneksi
+              <Link to="/leaderboard" className="pixel-button">LEADERBOARD</Link>
+            )}
            
           </div>
           <div className="nav-social">

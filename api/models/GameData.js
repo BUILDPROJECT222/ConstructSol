@@ -23,6 +23,7 @@ const gameDataSchema = new mongoose.Schema({
       default: {}
     },
     userBalance: { type: Number, default: 0 },
+    hammerPoints: { type: Number, default: 0 },
     lastUpdated: { type: Date, default: Date.now }
   },
   updatedAt: {

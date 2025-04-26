@@ -48,14 +48,16 @@ const FEATURES = [
     title: "Monopoly",
     description: "Buy land, trade resources, and outmaneuver other players to become the dominant force in the farming economy.",
     icon: seasonsIcon,
-    altText: "Pixel art of monopoly"
+    altText: "Pixel art of monopoly",
+    comingSoon: true
   },
   {
     id: 3,
     title: "Social",
     description: "Interact with friends, and participate in fun community events. Construction is better together!",
     icon: communityIcon,
-    altText: "Pixel art of social"
+    altText: "Pixel art of social",
+    comingSoon: true
   }
 ];
 
@@ -197,6 +199,10 @@ const Garden = () => {
       <div className="content-wrapper">
         {/* Welcome Section */}
         <main className="content-container welcome-section">
+          <div className="corner corner-tl"></div>
+          <div className="corner corner-tr"></div>
+          <div className="corner corner-bl"></div>
+          <div className="corner corner-br"></div>
           <h1 className="section-title">Welcome to Construct Sol</h1>
           <div className="welcome-logo-wrapper">
             <img src={welcomeLogo} alt="Construction Logo" className="welcome-logo" />
@@ -216,10 +222,14 @@ const Garden = () => {
 
         {/* Game Features Section */}
         <section className="content-container features-section">
+          <div className="corner corner-tl"></div>
+          <div className="corner corner-tr"></div>
+          <div className="corner corner-bl"></div>
+          <div className="corner corner-br"></div>
           <h2 className="section-title">Game Features</h2>
           <div className="feature-grid-detailed">
             {FEATURES.map((feature) => (
-              <div key={feature.id} className="feature-item">
+              <div key={feature.id} className={`feature-item ${feature.comingSoon ? 'feature-coming-soon' : ''}`}>
                 <div className="feature-icon-wrapper">
                   <img 
                     src={feature.icon} 
@@ -229,6 +239,11 @@ const Garden = () => {
                 </div>
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>
+                {feature.comingSoon && (
+                  <div className="coming-soon-overlay">
+                    <span className="coming-soon-text">COMING SOON</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -236,6 +251,10 @@ const Garden = () => {
 
         {/* Buildings Section */}
         <section className="content-container buildings-section">
+          <div className="corner corner-tl"></div>
+          <div className="corner corner-tr"></div>
+          <div className="corner corner-bl"></div>
+          <div className="corner corner-br"></div>
           <h2 className="section-title">Buildings</h2>
           <div className="feature-grid-detailed">
             {BUILDINGS.map((building) => (
@@ -257,6 +276,10 @@ const Garden = () => {
 
         {/* Roadmap Section */}
         <section className="content-container roadmap-section">
+          <div className="corner corner-tl"></div>
+          <div className="corner corner-tr"></div>
+          <div className="corner corner-bl"></div>
+          <div className="corner corner-br"></div>
           <h2 className="section-title">Development Roadmap</h2>
           <div className="roadmap-grid">
             {ROADMAP_ITEMS.map((item) => (

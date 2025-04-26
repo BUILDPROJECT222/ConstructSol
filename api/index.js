@@ -239,6 +239,7 @@ app.post('/api/game-data/:walletAddress', async (req, res) => {
         readyToHarvest: Boolean(plot.readyToHarvest)
       })) : [],
       userSeeds: gameData.userSeeds || {},
+      hammerPoints: gameData.hammerPoints || 0,
       lastUpdated: currentTime
     };
 
@@ -333,6 +334,7 @@ app.get('/api/game-data/:walletAddress', async (req, res) => {
           readyToHarvest: Boolean(plot.readyToHarvest)
         })),
         userSeeds: userData.gameData.userSeeds || {},
+        hammerPoints: userData.gameData.hammerPoints || 0,
         lastUpdated: currentTime.toISOString()
       };
       
@@ -353,6 +355,7 @@ app.get('/api/game-data/:walletAddress', async (req, res) => {
           readyToHarvest: false
         })),
         userSeeds: {},
+        hammerPoints: 0,
         lastUpdated: currentTime.toISOString()
       };
       

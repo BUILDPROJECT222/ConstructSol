@@ -3998,3 +3998,120 @@ position: relative;
     font-size: 9px;
   }
 }
+
+/* Add styles for hammer button */
+.garden-tool.hammer-tool {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.garden-tool.hammer-tool:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+  border-color: #666;
+  box-shadow: none;
+}
+
+.garden-tool.hammer-tool .tool-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-right: 6px;
+  background: linear-gradient(145deg, #FF8F00, #EF6C00);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: none;
+  transition: all 0.2s ease;
+}
+
+@keyframes hammer-swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.garden-tool.hammer-tool:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.garden-tool.hammer-tool:not(:disabled):hover .tool-icon {
+  border-color: rgba(255, 215, 0, 0.5);
+  animation: hammer-swing 0.5s ease infinite;
+}
+
+.garden-tool.hammer-tool.active {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 
+              inset 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.garden-tool.hammer-tool.active .tool-icon {
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  border-color: rgba(255, 215, 0, 0.7);
+  animation: hammer-swing 0.5s ease infinite;
+}
+
+
+/* Media queries for hammer button */
+@media (max-width: 768px) {
+  .garden-tool.hammer-tool {
+    padding: 4px 8px;
+  }
+  
+  .garden-tool.hammer-tool .tool-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    margin-right: 4px;
+  }
+  
+  .garden-tool.hammer-tool .tool-name {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .garden-tool.hammer-tool {
+    padding: 4px 6px;
+  }
+  
+  .garden-tool.hammer-tool .tool-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+  
+  .garden-tool.hammer-tool .tool-name {
+    font-size: 9px;
+  }
+}
