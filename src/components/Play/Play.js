@@ -1207,18 +1207,18 @@ const Play = () => {
         if (!response.ok) throw new Error('Failed to load game data');
         
         const data = await response.json();
-        console.log('Raw loaded game data:', data); // Tambahkan log ini
+        // console.log('Raw loaded game data:', data); // Tambahkan log ini
 
         // Verifikasi data seeds
-        console.log('Current userSeeds before load:', userSeeds);
-        console.log('Loaded userSeeds:', data.userSeeds);
+        // console.log('Current userSeeds before load:', userSeeds);
+        // console.log('Loaded userSeeds:', data.userSeeds);
 
         // Debug logging for hammerPoints
-        console.log('Raw hammerPoints in response:', { 
-          directHammerPoints: data.hammerPoints,
-          nestedHammerPoints: data.gameData?.hammerPoints,
-          dataStructure: JSON.stringify(data, null, 2)
-        });
+        // console.log('Raw hammerPoints in response:', { 
+        //   directHammerPoints: data.hammerPoints,
+        //   nestedHammerPoints: data.gameData?.hammerPoints,
+        //   dataStructure: JSON.stringify(data, null, 2)
+        // });
 
         setPlots(data.plots);
         setUserSeeds(data.userSeeds);
@@ -1230,7 +1230,7 @@ const Play = () => {
           
         setHammerPoints(loadedHammerPoints);
 
-        console.log('UserSeeds after setState:', data.userSeeds);
+        // console.log('UserSeeds after setState:', data.userSeeds);
         console.log('HammerPoints loaded:', loadedHammerPoints);
         
         return data;
