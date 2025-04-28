@@ -14,8 +14,7 @@ export const seeds = [
     description: 'High-end residential income boost',
     price: 300,
     reward: 315,
-    // growthTime: 5400, // Construction time in seconds
-    growthTime: 10,
+    growthTime: 5400, // Construction time in seconds
   },
   {
     id: 'apartment',
