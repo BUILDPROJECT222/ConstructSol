@@ -1057,13 +1057,13 @@ const Play = () => {
         ASSOCIATED_TOKEN_PROGRAM_ID
       );
 
-      console.log('Purchase attempt:', {
-        buyerTokenAccount: buyerTokenAccount.toString(),
-        storeTokenAccount: storeTokenAccount.toString(),
-        currentBalance: tokenBalance,
-        totalPrice,
-        quantity
-      });
+      // console.log('Purchase attempt:', {
+      //   buyerTokenAccount: buyerTokenAccount.toString(),
+      //   storeTokenAccount: storeTokenAccount.toString(),
+      //   currentBalance: tokenBalance,
+      //   totalPrice,
+      //   quantity
+      // });
 
       const transaction = new Transaction();
       const transferAmount = new BN(totalPrice * Math.pow(10, TOKEN_DECIMALS));
@@ -1364,11 +1364,11 @@ const Play = () => {
       }
 
       // Log token balance check
-      console.log('Token balance check:', {
-        userTokenBalance: tokenBalance,
-        plantedPlotsCount: plots.filter(plot => plot.planted).length,
-        requiredTokensPerPlot: 200
-      });
+      // console.log('Token balance check:', {
+      //   userTokenBalance: tokenBalance,
+      //   plantedPlotsCount: plots.filter(plot => plot.planted).length,
+      //   requiredTokensPerPlot: 200
+      // });
 
       // Validasi token minimum per plot (50000 token)
       const requiredTokensPerPlot = 200;
@@ -1425,7 +1425,7 @@ const Play = () => {
       });
       setPlots(updatedPlots);
 
-      console.log('Planting seed at:', new Date().toISOString());
+      // console.log('Planting seed at:', new Date().toISOString());
 
       // Simpan ke server dengan userSeeds yang sudah diupdate
       const currentWalletAddress = solana.publicKey.toString();
@@ -1502,14 +1502,14 @@ const Play = () => {
       
       const rewardAmount = plantedSeed.reward * Math.pow(10, TOKEN_DECIMALS);
 
-      console.log('Harvest initiated:', {
-        isWalletConnected,
-        walletAddress: solana.publicKey.toString(),
-        plotIndex: index,
-        plantType: plot.plantType,
-        reward: rewardAmount,
-        blockhash
-      });
+      // console.log('Harvest initiated:', {
+      //   isWalletConnected,
+      //   walletAddress: solana.publicKey.toString(),
+      //   plotIndex: index,
+      //   plantType: plot.plantType,
+      //   reward: rewardAmount,
+      //   blockhash
+      // });
 
       const response = await fetch(`${API_BASE_URL}/api/harvest`, {
         method: 'POST',
@@ -1688,14 +1688,14 @@ const Play = () => {
     if (isProcessing) return;
 
     // Add console log to debug
-    console.log('Plot clicked:', {
-      index,
-      currentAction,
-      selectedSeed,
-      plotData: plots[index],
-      userSeeds,
-      isWalletConnected
-    });
+    // console.log('Plot clicked:', {
+    //   index,
+    //   currentAction,
+    //   selectedSeed,
+    //   plotData: plots[index],
+    //   userSeeds,
+    //   isWalletConnected
+    // });
 
     if (!currentAction) {
       console.log('No current action selected');
