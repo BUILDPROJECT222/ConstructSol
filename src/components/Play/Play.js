@@ -388,7 +388,7 @@ const Plot = React.memo(({
 
 // Add new tool for visiting gardens
 const tools = [
-  { id: 'store', name: 'CONSTRUCTION SHOP', icon: '🏘️' },
+  { id: 'store', name: 'BLUEPRINT SHOP', icon: '🏘️' },
   { id: 'garden', name: 'CONSTRUCTION AREA', icon: '🚜' },
   { id: 'history', name: 'HISTORY', icon: '📜' },
   { id: 'leaderboard', name: ' LEADERBOARD', icon: '🏆' },
@@ -744,7 +744,7 @@ const Play = () => {
   } = useWallet();
 
   const tools = [
-    { id: 'store', name: 'CONSTRUCTION SHOP', icon: '🏘️' },
+    { id: 'store', name: 'BLUEPRINT SHOP', icon: '🏘️' },
     { id: 'garden', name: 'CONSTRUCTION AREA', icon: '🚜' },
     { id: 'history', name: 'HISTORY', icon: '📜' },
     { id: 'leaderboard', name: ' LEADERBOARD', icon: '🏆' },
@@ -2057,7 +2057,7 @@ const Play = () => {
                 >
                   {tokenBalance < totalPrice ? 
                     `Need ${formatBalance(totalPrice - tokenBalance)} Construction token` : 
-                    `Buy ${quantity} Construction${quantity > 1 ? 's' : ''}`}
+                    `Buy ${quantity} Blueprint${quantity > 1 ? 's' : ''}`}
                 </button>
 
                 {/* Add Sell button */}
@@ -2067,7 +2067,7 @@ const Play = () => {
                     onClick={() => sellSeed({ ...seed, quantity })}
                     disabled={!isWalletConnected || quantity > ownedQuantity}
                   >
-                    {`Sell ${quantity} Construction${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)}`}
+                    {`Sell ${quantity} Blueprint${quantity > 1 ? 's' : ''} for ${formatBalance(sellPrice)}`}
                   </button>
                 )}
               </div>
