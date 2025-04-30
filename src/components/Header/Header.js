@@ -19,7 +19,7 @@ const Header = () => {
       {isHomePage && (
         <div className="contract-address">
           <span className="address-label">CA:</span>
-          <span className="address-value">33LtJDnW38fKTpNo16FEiH3ARfX7q8qLruTtKoifpump</span>
+          <span className="address-value">-</span>
         </div>
       )}
       
@@ -70,7 +70,7 @@ const Header = () => {
               </svg>
             </a> */}
             <a 
-              href="https://dexscreener.com/solana/a7a9fnoe7r3dzusxaaitxyrhkkazyefcug5evfqfewnh" 
+              href="https://dexscreener.com/" 
               className="social-icon dexscreener" 
               aria-label="DexScreener"
               target="_blank" 
