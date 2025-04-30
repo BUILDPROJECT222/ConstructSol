@@ -176,7 +176,7 @@ const LeaderboardContent = () => {
         }
         
         const data = await response.json();
-        console.log('Received data:', data); // Debug log
+        // console.log('Received data:', data); // Debug log
         setLeaderboardData(data);
       } catch (err) {
         console.error('Error fetching leaderboard:', err);
@@ -1433,7 +1433,7 @@ const Play = () => {
 
       await saveGameData(updatedPlots, updatedSeeds, hammerPoints);
 
-      toast.success('Seed planted successfully!');
+      toast.success('City Blueprint Placed Successfully!');
     } catch (error) {
       console.error('Error planting seed:', error);
       
