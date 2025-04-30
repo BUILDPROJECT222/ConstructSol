@@ -70,7 +70,7 @@ const Header = () => {
               </svg>
             </a> */}
             <a 
-              href="https://dexscreener.com" 
+              href="https://dexscreener.com/solana/a7a9fnoe7r3dzusxaaitxyrhkkazyefcug5evfqfewnh" 
               className="social-icon dexscreener" 
               aria-label="DexScreener"
               target="_blank" 
