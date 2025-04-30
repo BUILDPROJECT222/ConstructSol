@@ -12,9 +12,9 @@ export const seeds = [
     imgSrc: houseIcon,
     icon: <img src={houseIcon} alt="House" width="70" height="70" />,
     description: 'High-end residential income boost',
-    price: 1000,
-    reward: 2000,
-    growthTime: 10, // Construction time in seconds
+    price: 50000,
+    reward: 52500,
+    growthTime: 10800, // Construction time in seconds
   },
   {
     id: 'apartment',
