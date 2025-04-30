@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 });
 
 // Constants
-const DEVNET_RPC_URL = process.env.REACT_APP_DEVNET_RPC_URL;
+const MAINNET_RPC_URL = process.env.REACT_APP_MAINNET_RPC_URL;
 const TOKEN_MINT = new PublicKey(process.env.REACT_APP_TOKEN_MINT);
 const TOKEN_DECIMALS = parseInt(process.env.REACT_APP_TOKEN_DECIMALS);
 
@@ -127,7 +127,7 @@ try {
 }
 
 const getConnection = () => {
-  return new Connection(DEVNET_RPC_URL, {
+  return new Connection(MAINNET_RPC_URL, {
     commitment: 'confirmed',
     wsEndpoint: undefined,
     confirmTransactionInitialTimeout: 60000

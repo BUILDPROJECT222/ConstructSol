@@ -12,9 +12,9 @@ export const seeds = [
     imgSrc: houseIcon,
     icon: <img src={houseIcon} alt="House" width="70" height="70" />,
     description: 'High-end residential income boost',
-    price: 300,
-    reward: 315,
-    growthTime: 5400, // Construction time in seconds
+    price: 1000,
+    reward: 2000,
+    growthTime: 10, // Construction time in seconds
   },
   {
     id: 'apartment',
@@ -22,9 +22,9 @@ export const seeds = [
     imgSrc: apartmentIcon,
     icon: <img src={apartmentIcon} alt="Apartment" width="70" height="70" />,
     description: 'Vertical housing, stable returns',
-    price: 300,
-    reward: 345,
-    growthTime: 10800, // 1.5 hours
+    price: 50000,
+    reward: 57500,
+    growthTime: 21600, // 1.5 hours
   },
   {
     id: 'store',
@@ -32,9 +32,9 @@ export const seeds = [
     imgSrc: storeIcon,
     icon: <img src={storeIcon} alt="Store" width="70" height="70" />,
     description: 'Small shop, fast revenue',
-    price: 300,
-    reward: 420,
-    growthTime: 21600, 
+    price: 50000,
+    reward: 70000,
+    growthTime: 43200, 
   },
   {
     id: 'store1',
@@ -42,9 +42,9 @@ export const seeds = [
     imgSrc: storeIcon1,
     icon: <img src={storeIcon1} alt="Store1" width="70" height="70" />,
     description: 'Compact business, consistent flow',
-    price: 300,
-    reward: 570,
-    growthTime: 43200, 
+    price: 50000,
+    reward: 95000,
+    growthTime: 86400, 
   },
   {
     id: 'store2',
@@ -52,9 +52,9 @@ export const seeds = [
     imgSrc: storeIcon2,
     icon: <img src={storeIcon2} alt="Store2" width="70" height="70" />,
     description: 'Large-scale income generator',
-    price: 300,
-    reward: 900,
-    growthTime: 86400, // 1.5 hours
+    price: 50000,
+    reward: 150000,
+    growthTime: 172800, // 1.5 hours
   },
   // {
   //   id: 'factory',

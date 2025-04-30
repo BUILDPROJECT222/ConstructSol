@@ -83,7 +83,7 @@ const ROADMAP_ITEMS = [
       "Community building & social media presence",
       "UI/UX improvements based on alpha test insights"
     ],
-    status: "in-progress"
+    status: "done"
   },
   {
     id: 3,
@@ -95,7 +95,7 @@ const ROADMAP_ITEMS = [
       "Launch leaderboard & prestige system",
       "Add visual upgrades & sound elements"
     ],
-    status: "upcoming"
+    status: "done"
   },
   {
     id: 4,
@@ -107,7 +107,7 @@ const ROADMAP_ITEMS = [
       "Partner with other Solana-based projects",
       "Host limited-time build events"
     ],
-    status: "upcoming"
+    status: "in-progress"
   },
   {
     id: 5,

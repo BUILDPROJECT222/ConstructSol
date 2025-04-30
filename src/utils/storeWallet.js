@@ -34,5 +34,5 @@ export const getStoreWallet = () => {
 };
 
 export const getNetwork = () => {
-  return 'devnet';
+  return 'mainnet-beta';
 }; 

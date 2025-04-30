@@ -754,11 +754,11 @@ const Play = () => {
   ]
 
   // Update RPC URL constant
-  const DEVNET_RPC_URL = process.env.REACT_APP_DEVNET_RPC_URL;  // Changed from MAINNET to DEVNET
+  const MAINNET_RPC_URL = process.env.REACT_APP_MAINNET_RPC_URL;
   
   // Update getConnection function
   const getConnection = () => {
-    return new Connection(DEVNET_RPC_URL, {
+    return new Connection(MAINNET_RPC_URL, {
       commitment: 'confirmed',
       wsEndpoint: undefined,
       confirmTransactionInitialTimeout: 60000
@@ -1371,7 +1371,7 @@ const Play = () => {
       // });
 
       // Validasi token minimum per plot (50000 token)
-      const requiredTokensPerPlot = 200;
+      const requiredTokensPerPlot = 50000;
       const userTokenBalance = tokenBalance || 0;
       
       // Hitung jumlah plot yang sudah dibangun
@@ -1673,7 +1673,7 @@ const Play = () => {
     const checkNetwork = async () => {
       const isConnected = await checkDevnetConnection();
       if (!isConnected) {
-        toast.error('Please make sure you are connected to Devnet');
+        toast.error('Please make sure you are connected to Mainnet');
       }
     };
     
@@ -1953,7 +1953,7 @@ const Play = () => {
           /> 
         <h2>Connect Wallet Required</h2>
         <div className="wallet-prompt-devnet">
-        <p>Please connect your Phantom wallet using Devnet to access the game</p>
+        <p>Please connect your Phantom wallet using Mainnet to access the game</p>
         </div>
         <button onClick={connectWallet} className="connect-wallet-btn">
           {!window.solana?.isPhantom ? 'Install Phantom Wallet' : 'Connect Wallet'}

@@ -5,21 +5,21 @@ import { getAssociatedTokenAddress, getAccount, getMint } from '@solana/spl-toke
 const WalletContext = createContext();
 
 // Update RPC URL constant
-const DEVNET_RPC_URL = process.env.REACT_APP_DEVNET_RPC_URL;
-console.log('RPC URL:', DEVNET_RPC_URL); // untuk debugging
+const MAINNET_RPC_URL = process.env.REACT_APP_MAINNET_RPC_URL;
+// console.log('RPC URL:', MAINNET_RPC_URL); // untuk debugging
 
 const getConnection = () => {
-  if (!DEVNET_RPC_URL) {
+  if (!MAINNET_RPC_URL) {
     console.error('RPC URL is undefined');
     throw new Error('RPC URL is not configured');
   }
 
-  if (!DEVNET_RPC_URL.startsWith('http://') && !DEVNET_RPC_URL.startsWith('https://')) {
-    console.error('Invalid RPC URL format:', DEVNET_RPC_URL);
+  if (!MAINNET_RPC_URL.startsWith('http://') && !MAINNET_RPC_URL.startsWith('https://')) {
+    console.error('Invalid RPC URL format:', MAINNET_RPC_URL);
     throw new Error('Invalid RPC URL format');
   }
 
-  return new Connection(DEVNET_RPC_URL, {
+  return new Connection(MAINNET_RPC_URL, {
     commitment: 'confirmed',
     confirmTransactionInitialTimeout: 60000
   });
@@ -208,8 +208,8 @@ export const WalletProvider = ({ children }) => {
         const response = await solana.connect();
         const fullAddress = response.publicKey.toString();
         
-        // Use devnet connection
-        const connection = new Connection(DEVNET_RPC_URL, {
+        // Use mainnet connection
+        const connection = new Connection(MAINNET_RPC_URL, {
           commitment: 'confirmed',
           wsEndpoint: undefined,
           confirmTransactionInitialTimeout: 60000
@@ -278,18 +278,18 @@ export const WalletProvider = ({ children }) => {
             method: 'wallet_getNetwork'
           });
             
-          // If not on devnet, switch to it
-          if (resp !== 'devnet') {
+          // If not on mainnet-beta, switch to it
+          if (resp !== 'mainnet-beta') {
             await solana.request({
               method: 'wallet_switchNetwork',
-              params: [{ networkName: 'devnet' }],
+              params: [{ networkName: 'mainnet-beta' }],
             });
-            console.log('Switched to devnet');
+            console.log('Switched to mainnet-beta');
           }
         } catch (error) {
           console.error('Network switch error:', error);
           setNotification({
-            message: 'Please switch to Devnet in your Phantom wallet',
+            message: 'Please switch to Mainnet in your Phantom wallet',
             isError: true
           });
         }

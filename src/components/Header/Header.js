@@ -28,7 +28,7 @@ const Header = () => {
         </div> */}
         <nav className="game-nav">
           <div className="nav-links">
-            <Link to="/" className="pixel-button">HOME</Link>
+            <Link to="/" className="pixel-button">HOME</Link> 
             <Link to="/about" className="pixel-button">ABOUT</Link>
             {/* <span className="pixel-button disabled">PLAY</span> */}
             <Link to="/play" className="pixel-button">PLAY</Link>
