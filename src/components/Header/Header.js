@@ -19,7 +19,7 @@ const Header = () => {
       {isHomePage && (
         <div className="contract-address">
           <span className="address-label">CA:</span>
-          <span className="address-value">-</span>
+          <span className="address-value">33LtJDnW38fKTpNo16FEiH3ARfX7q8qLruTtKoifpump</span>
         </div>
       )}
       
